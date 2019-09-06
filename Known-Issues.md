@@ -1,0 +1,1 @@
+IFrames are not supported in Chrome/FireFix (frameset are supported) Use IF if you need work with IFrames for now
