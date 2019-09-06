@@ -16,3 +16,4 @@ How to connect the robot with [Chrome and Firefox](https://openrpa.openrpa.dk/pa
 
 The basics behind the [plugin model](https://openrpa.openrpa.dk/pages/plugin-model) used by the robot
 
+[Known-Issues](https://github.com/open-rpa/openrpa/wiki/Known-Issues)
