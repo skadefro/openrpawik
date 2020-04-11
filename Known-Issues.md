@@ -2,7 +2,7 @@ IFrames are not supported in Internet explorer
 
 Framesets and Iframe is not supported in xpath mode in IE
 
-Robot cannot be run from an UNC share or special One/dropbox/G-drive, all files MUST be located on the local pc.
+Robot cannot be run from an UNC share or special One/dropbox/G-drive, all files **must** be located on the local pc.
 
 If recording on a computer with multiple screens, try and only use the primary monitor
 
