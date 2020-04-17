@@ -9,5 +9,5 @@ If recording on a computer with multiple screens, try and only use the primary m
 Recording with windows display settings where Scale and layout is not set to 100% will not work.
 ( you can change this back to a non 100% value after recording, if all clicks are virtual )
 
-If the robot crashes while loading addons and you have anaconda Python installed, please uninstall Scripting support in the robot ( or delete C:\Program Files\OpenRPA\OpenRPA.Script.dll)
-You can also try and install Python 3.5 following [this guide](https://docs.anaconda.com/anaconda/user-guide/faq/#anaconda-faq-35)
+If you install Generic scripting support (on by default) then the robot wil crash if you are using Python 3.7.6. Please downgrade to 3.7.5 or 3.5 )
+I you are using Anaconda you can follow [this guide](https://docs.anaconda.com/anaconda/user-guide/faq/#anaconda-faq-35)
