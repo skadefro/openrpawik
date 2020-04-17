@@ -10,4 +10,5 @@ Recording with windows display settings where Scale and layout is not set to 100
 ( you can change this back to a non 100% value after recording, if all clicks are virtual )
 
 If you install Generic scripting support (on by default) then the robot will crash if you are using Python 3.7.6. Please downgrade to 3.7.5 or 3.5 )
-I you are using Anaconda you can follow [this guide](https://docs.anaconda.com/anaconda/user-guide/faq/#anaconda-faq-35)
+
+If you are using Anaconda you can follow [this guide](https://docs.anaconda.com/anaconda/user-guide/faq/#anaconda-faq-35)
