@@ -9,6 +9,5 @@ If recording on a computer with multiple screens, try and only use the primary m
 Recording with windows display settings where Scale and layout is not set to 100% will not work.
 ( you can change this back to a non 100% value after recording, if all clicks are virtual )
 
-If you install Generic scripting support (on by default) then the robot will crash if you are using Python 3.7.6. Please downgrade to 3.7.5 or 3.5 )
-
-If you are using Anaconda you can follow [this guide](https://docs.anaconda.com/anaconda/user-guide/faq/#anaconda-faq-35)
+Disabling the embedded python and using the locally installed version will not work with anaconda python. 
+A normal python install should work with version 3.5 and up to 3.7 ( needed if you want to use tkinter )
