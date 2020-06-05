@@ -20,3 +20,5 @@ The basics behind the [plugin model](https://openrpa.openrpa.dk/pages/plugin-mod
 Configure the robot to work ["offline"](https://github.com/open-rpa/openrpa/blob/master/docs/pages/offline.md) by not being connected to an OpenFlow instance.
 
 [Known-Issues](https://github.com/open-rpa/openrpa/wiki/Known-Issues)
+
+[Requirements](https://github.com/open-rpa/openrpa/wiki/Requirements)
