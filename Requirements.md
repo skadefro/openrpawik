@@ -8,6 +8,6 @@ If you enable a click or element detector the robot will be monitoring every mou
 The robot, if not configured on offline mode, will require a working network connection to start. Once in sync with openflow it will function even if the network goes a wait for a short periods of time.
 The robot uses WebSockets to connect with OpenFlow, if using a firewall that does layer 4 inspection or if you are using a proxy server, be sure to check this supports WebSockets. 
 
-If you are using https://app.openiap.io be aware this is running in Google Cloud, so for people in certain countries, this can be a issue. 
+If you are using https://app.openiap.io be aware this is running in Google Cloud, so for people in certain countries, this can be an issue. 
 
 If you are hit by any of last two issues, feel free to create your own installation of OpenFlow, in another network or On-premise.
