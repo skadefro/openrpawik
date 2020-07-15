@@ -17,7 +17,7 @@ How to connect the robot with [Chrome and Firefox](https://openrpa.openrpa.dk/pa
 The basics behind the [plugin model](https://openrpa.openrpa.dk/pages/plugin-model) used by the robot
 
 
-Configure the robot to work ["offline"](https://github.com/open-rpa/openrpa/blob/master/docs/pages/offline.md) by not being connected to an OpenFlow instance.
+Configure the robot to work ["offline"](https://openrpa.openrpa.dk/pages/offline) by not being connected to an OpenFlow instance.
 
 [Known-Issues](https://github.com/open-rpa/openrpa/wiki/Known-Issues)
 
