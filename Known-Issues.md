@@ -13,3 +13,5 @@ Recording with windows display settings where Scale and layout is not set to 100
 
 Disabling the embedded python and using the locally installed version will not work with anaconda python. 
 A normal python install should work with version 3.5 and up to 3.7 ( needed if you want to use tkinter )
+
+Mozilla took down the extension for Firefox, with no warning, and with a vague explanation that eval was generally not allowed. After digging in to they own guides I see the that OpenRPAs extension should qualify to be one of the exceptions, that would be allowed, but when I queried them about it, I just got an arrogant rejecting back. So goodbye Firefox, people can use chrome or edge from now on.
