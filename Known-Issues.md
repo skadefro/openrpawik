@@ -1,3 +1,6 @@
+SAP recording is in beta, and only tested on latest version of the sap client with the default theme.
+SAP get datatable() is in ALPHA
+
 IFrames are not supported in Internet explorer
 
 Framesets and Iframe is not supported in xpath mode in IE
