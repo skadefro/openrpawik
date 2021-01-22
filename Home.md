@@ -8,7 +8,7 @@ Working with the [selector window](https://openrpa.openrpa.dk/pages/selector-win
 
 Demystifying the [type text activity](https://openrpa.openrpa.dk/pages/typetext-syntax) syntax 
 
-All most complete list of [basic activities](https://openrpa.openrpa.dk/pages/activities)
+All most complete list of [basic activities](https://openrpa.openrpa.dk/pages/activities) in [Japanese](https://openrpa.openrpa.dk/pages/activities.jp) (thank you Yusuke Matsuo)
 
 Working with [detectors](https://openrpa.openrpa.dk/pages/detectors)
 
