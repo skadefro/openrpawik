@@ -13,6 +13,7 @@ If recording on a computer with multiple screens, try and only use the primary m
 
 Recording with windows display settings where Scale and layout is not set to 100% will not work.
 ( you can change this back to a non 100% value after recording, if all clicks are virtual )
+
 ![right click desktop and select display settings](https://github.com/open-rpa/openrpa/raw/master/docs/img/dpi1.png)
 ![Set scale to 100%](https://github.com/open-rpa/openrpa/raw/master/docs/img/dpi2.png)
 
