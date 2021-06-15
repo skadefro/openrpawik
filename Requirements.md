@@ -1,7 +1,7 @@
 The robot uses CEF to show the login page and the getting started page. 
 On windows 7 this requires [2015 C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=48145) to be installed.
 
-The HD robot solution, is based on FreeRDP, and requires [2013 C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=40784) to be installed.
+The HD robot solution, if using FreeRDP requires [2013 C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=40784) to be installed.
 
 If you enable a click or element detector the robot will be monitoring every mouse click on the computer, and on very lowend computers this can give a few miliseconds delay on clicks and show a little CPU usage on the robot. But most pc this is a non-issue.
 
