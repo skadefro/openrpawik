@@ -1,8 +1,6 @@
 SAP recording is in beta, and only tested on latest version of the sap client with the default theme.
 SAP get datatable() is in ALPHA
 
-Child Sessions does not work under Windows 11
-
 Child Sessions have issues under certain types of VDI
 
 IFrames are not supported in Internet explorer
