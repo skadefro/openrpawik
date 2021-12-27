@@ -7,7 +7,7 @@ IFrames are not supported in Internet explorer
 
 Framesets and Iframe is not supported in xpath mode in IE
 
-Virtual clicking and setting values are not working in 32bit version of java, and in some version of oracle JVM
+Virtual clicking and setting values are not working in some version of oracle JVM
 
 Robot cannot be run from an UNC share or special One/dropbox/G-drive, all files **must** be located on the local pc.
 
