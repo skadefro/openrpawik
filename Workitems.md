@@ -7,7 +7,7 @@ If a Workitems fails, you can easily retry that item by clicking the Resubmit
 
 A common practice is to create a "Main processing" workflow that pop items of an queue, and calls a "processing" workflow using Invoke OpenRPA. 
 ![image](https://user-images.githubusercontent.com/4155937/163803744-06cf703f-be00-4ec5-83e8-21f85db40053.png)  
-By encapsulating this activity in a Try Catch activity, we can guarantee we always update the Workitem status to either Successful or Retry.
+By encapsulating this activity in a Try Catch activity, we can guarantee we always update the Workitem status to either Successful or Retry.  
 ![image](https://user-images.githubusercontent.com/4155937/163803802-75da0e10-2adf-4ceb-8ce9-1dc5acec7af5.png)
 ![image](https://user-images.githubusercontent.com/4155937/163803841-71ffe1d0-5dec-4195-a795-7957d62588ea.png)  
 
