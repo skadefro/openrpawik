@@ -1,3 +1,26 @@
+## Workitems
+Inside OpenRPA or OpenFlow you can create a Workitem Queue. A queue can contain an unlimited number of Workitems. Each Workitem represents some data ( and some times files ) that needs to be processed some how. The queue will handle giving out Workitems to clients that asks for a new item to process, conforming to special rules, like how many times can an item be tried before failing completely, in what order they should be process or if an Workitem should be post pone for an amount of time.
+You can add Workitems from OpenRPA, in the openflow web interface or from within NodeRED. If you need to add a lot of items, you should use "Buld add" ( called Add workitems in NodeRED ) for better performance.
+You can pop items from OpenRPA and NodeRED. ( pop means asking OpenFlow if there is an item ready to be processed, if there is, it will checkout that item to you, and update it's state to "Proccessing". It is now you responsibility to ensure the item changes state to "Retry" or "Successful" using Update Workitem.
+If a Workitems fails, you can easily retry that item by clicking the Resubmit 
+![image](https://user-images.githubusercontent.com/4155937/163803342-a964ef80-e11f-4048-95e1-2dba82244cce.png) button inside OpenFlow. 
+
+A common practice is to create a "Main processing" workflow that pop items of an queue, and calls a "processing" workflow using Invoke OpenRPA. 
+![image](https://user-images.githubusercontent.com/4155937/163803744-06cf703f-be00-4ec5-83e8-21f85db40053.png)  
+By encapsulating this activity in a Try Catch activity, we can guarantee we always update the Workitem status to either Successful or Retry.
+![image](https://user-images.githubusercontent.com/4155937/163803802-75da0e10-2adf-4ceb-8ce9-1dc5acec7af5.png)
+![image](https://user-images.githubusercontent.com/4155937/163803841-71ffe1d0-5dec-4195-a795-7957d62588ea.png)  
+
+If needed we can easily add a call to a separate Workflow that "prepares" everything ( Ensure needed applications are open and on the right tab etc. )
+and add calls to a clean up workflow, that makes sure any error dialogs are closed, kill unresponsive applications, close down chrome etc.
+![image](https://user-images.githubusercontent.com/4155937/163804408-3a558e54-d16e-43ea-a2b5-2f3c071d9c48.png)
+
+# Multiple stages
+Not all Workitems can or should be processed in one go. Often a unit of work will go though several steps. We can easily achieve this by adding one Workitem Queues for each step, and after a Workitem has compleed successful, we add a new Workitem in the next queue copying the values and files from the original item.  
+For instance, say you create a Workitem for each invoice you receive. You process each invoice, like adding it to your local ERP system, you could then create a Workitem with a "nextrun" set to the payment due date of the invoice, to allow a workflow handle all payments at the correct time.  
+![image](https://user-images.githubusercontent.com/4155937/163805797-31414b9e-813c-4ee9-b01b-d42ff5454cc7.png)
+
+
 # Add Workitem
 ![image](https://user-images.githubusercontent.com/4155937/163792775-fc7c96c0-1208-4d53-9063-b6a73289fba0.png)  
 Add new Workitem to the selected Workitem Queue. You can add an unlimited number of parameters using the Payload Property. You can also add as many files as you want, by setting "Files" to an array for strings with the full path and filename to the files you want to attach to the Workitem.
