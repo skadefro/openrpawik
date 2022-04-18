@@ -39,3 +39,4 @@ If some items are more important than others and you often have many work items 
 # Update Workitem
 ![image](https://user-images.githubusercontent.com/4155937/163793002-e1745656-c6dd-4829-980a-4b70571d8acc.png)  
 
+# Throw Business Rule Exception
