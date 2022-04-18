@@ -5,7 +5,7 @@ You can pop items from OpenRPA and NodeRED. ( pop means asking OpenFlow if there
 If a Workitems fails, you can easily retry that item by clicking the Resubmit 
 ![image](https://user-images.githubusercontent.com/4155937/163803342-a964ef80-e11f-4048-95e1-2dba82244cce.png) button inside OpenFlow. 
 
-A common practice is to create a "Main processing" workflow that pop items of an queue, and calls a "processing" workflow using Invoke OpenRPA. 
+A common practice is to create a "Main processing" workflow that pop items of an queue, and calls a "processing" workflow using Invoke OpenRPA.   
 ![image](https://user-images.githubusercontent.com/4155937/163803744-06cf703f-be00-4ec5-83e8-21f85db40053.png)  
 By encapsulating this activity in a Try Catch activity, we can guarantee we always update the Workitem status to either Successful or Retry.  
 ![image](https://user-images.githubusercontent.com/4155937/163803802-75da0e10-2adf-4ceb-8ce9-1dc5acec7af5.png)
