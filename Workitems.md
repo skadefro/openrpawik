@@ -12,7 +12,7 @@ By encapsulating this activity in a Try Catch activity, we can guarantee we alwa
 ![image](https://user-images.githubusercontent.com/4155937/163803841-71ffe1d0-5dec-4195-a795-7957d62588ea.png)  
 
 If needed we can easily add a call to a separate Workflow that "prepares" everything ( Ensure needed applications are open and on the right tab etc. )
-and add calls to a clean up workflow, that makes sure any error dialogs are closed, kill unresponsive applications, close down chrome etc.
+and add calls to a clean up workflow, that makes sure any error dialogs are closed, kill unresponsive applications, close down chrome etc.  
 ![image](https://user-images.githubusercontent.com/4155937/163804408-3a558e54-d16e-43ea-a2b5-2f3c071d9c48.png)
 
 # Multiple stages
