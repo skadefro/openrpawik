@@ -38,7 +38,7 @@ You should never need to use this. This will delete an item from the Workitem Qu
 
 ## Pop Workitem
 ![image](https://user-images.githubusercontent.com/4155937/163792955-f01abac0-2bd4-4b6e-91d8-54f4074a9aab.png)  
-Takes the next item, ready to be processed. Openflow will handle prioritized items, and filter out items scheduled to run in the future. Once an item has been popped it gets checked out to the current user, and set in state "Processing" and can no longer to popped. So it is important update the item to Successful or Retry once completed. The simple way to do this, is to process the Workitem in a sperate workflow and call "Invoke OpenRPA" inside a try catch activity. 
+Takes the next item, ready to be processed. Openflow will handle prioritized items, and filter out items scheduled to run in the future. Once an item has been popped it gets checked out to the current user, and set to state "Processing" and can no longer to popped. So it is important update the item to Successful or Retry once completed. The simple way to do this, is to process the Workitem in a sperate workflow and call "Invoke OpenRPA" inside a try catch activity. 
 
 ## Update Workitem
 ![image](https://user-images.githubusercontent.com/4155937/163793002-e1745656-c6dd-4829-980a-4b70571d8acc.png)  
@@ -59,7 +59,7 @@ All WorkItem nodes needs a config node, defining what queue they are working wit
 Right now you manually have to add the id or queue name, at some point we might add a dropdown list instead  
 ![image](https://user-images.githubusercontent.com/4155937/164935663-90d71827-6def-401c-aa4f-9472e5c8b058.png)  
 
-## API Add Workitem
+## Add Workitem node
 ![image](https://user-images.githubusercontent.com/4155937/164935130-81ccb186-8cf0-484f-baa2-092ebb574b7c.png)  
 Add a new Workitem to the selected Workitem Queue. By default msg.payload gets added as the payload to the new Workitem.  
 You can supply an array for "file objects" to the files property to attach one or more files to the work item.  
@@ -76,3 +76,15 @@ msg.files.push( {
 nextrun takes a date, if this date is in the future, the workiem will not get processed until this time.  
 Priority can be used to prioritize if many items are in the queue. The lower the number the more important the item is.    
 msg.topic will set the name of the new Workitem  
+
+## Pop Workitem node
+![image](https://user-images.githubusercontent.com/4155937/164938733-6d221629-1792-4b46-baa1-a0cd3e375fb4.png)    
+Takes the next item, ready to be processed of the queue. Openflow will handle prioritized items, and filter out items scheduled to run in the future. Once an item has been popped it gets checked out to the current user, and set to state "Processing" and can no longer to popped. So it is important update the item to Successful or Retry once completed. The simple way to do this is to keep the workflow on it's own tab inside NodeRED. Then add a Catch node, set to catch errors from all nodes, and then add an update Workitem node, to set status to Retry.  
+![image](https://user-images.githubusercontent.com/4155937/164939433-0f5531e2-4b28-42ac-bf3e-20901fc3b6d4.png)  
+
+## Update Workitem node
+![image](https://user-images.githubusercontent.com/4155937/164936942-d26e9b36-e01b-4419-a62d-d4abd98e6644.png)  
+Updates the selected Workitem, gotten using Pop Workitem.  
+You can add or update files associated with the Workitem by using same syntax as with Add Workitem using an array of "file objects" set to the files property.  
+If processing the item, was a success, status should by "Successful", if something went wrong, status should always be set to "Retry" then openflow will determine if, how and when to retry the Workitem based on the Workitem Queue settings.  
+If retrying an item, that has already passed the Max retries on the queue, you can force the item to still be re-processed by setting Ignore max retries to true.
