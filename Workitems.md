@@ -23,6 +23,10 @@ Not all Workitems can or should be processed in one go. Often a unit of work wil
 For instance, say you create a Workitem for each invoice you receive. You process each invoice, like adding it to your local ERP system, you could then create a Workitem with a "nextrun" set to the payment due date of the invoice, to allow a workflow handle all payments at the correct time.  
 ![image](https://user-images.githubusercontent.com/4155937/163805797-31414b9e-813c-4ee9-b01b-d42ff5454cc7.png)
 
+## OpenRPA video examples
+You can find a few videos and example workflows at the following link  
+[add-workitems-openrpa](https://github.com/open-rpa/examples-files/tree/master/add-workitems-openrpa)
+
 # OpenRPA Work Item Activities
 
 ## Add Workitem
