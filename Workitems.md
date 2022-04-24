@@ -15,6 +15,9 @@ If needed we can easily add a call to a separate Workflow that "prepares" everyt
 and add calls to a clean up workflow, that makes sure any error dialogs are closed, kill unresponsive applications, close down chrome etc.  
 ![image](https://user-images.githubusercontent.com/4155937/163804408-3a558e54-d16e-43ea-a2b5-2f3c071d9c48.png)
 
+If you have a role with RPA enabled with multiple robots, you can assign this role to the project, and the Workitem Queue.  
+On the Workitem queue you then set the role as robot target, and the main workflow as entry point workflow, and you can now scale out the workload handling to as may robot as you want ( preferably using [HD Robots](https://www.youtube.com/watch?v=VMQtr0fK3Rw) )
+
 ## Multiple stages
 Not all Workitems can or should be processed in one go. Often a unit of work will go though several steps. We can easily achieve this by adding one Workitem Queues for each step, and after a Workitem has compleed successful, we add a new Workitem in the next queue copying the values and files from the original item.  
 For instance, say you create a Workitem for each invoice you receive. You process each invoice, like adding it to your local ERP system, you could then create a Workitem with a "nextrun" set to the payment due date of the invoice, to allow a workflow handle all payments at the correct time.  
@@ -58,6 +61,10 @@ Throw a new Exception that ends the workflow. By using this exception type we ca
 All WorkItem nodes needs a config node, defining what queue they are working with  
 Right now you manually have to add the id or queue name, at some point we might add a dropdown list instead  
 ![image](https://user-images.githubusercontent.com/4155937/164935663-90d71827-6def-401c-aa4f-9472e5c8b058.png)  
+You can setup a cron job, are scheduler to pop items, or you can add an amqp consumer, and set this consumer on an Workitem queue
+This will all for a simple workflow like this, that calls a subflow for processing.  
+![image](https://user-images.githubusercontent.com/4155937/164965765-f0fbd63f-c284-4d69-bbf5-8905e54747a4.png)
+we can the distribute this workflow across multiple NodeRED for easy scaling out our workflow 
 
 ## Add Workitem node
 ![image](https://user-images.githubusercontent.com/4155937/164935130-81ccb186-8cf0-484f-baa2-092ebb574b7c.png)  
