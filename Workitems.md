@@ -77,6 +77,11 @@ nextrun takes a date, if this date is in the future, the workiem will not get pr
 Priority can be used to prioritize if many items are in the queue. The lower the number the more important the item is.    
 msg.topic will set the name of the new Workitem  
 
+## Add Workitems node
+![image](https://user-images.githubusercontent.com/4155937/164965395-21f495a3-860c-4908-9d69-1c30e3d932fa.png)  
+Takes an array of payloads, and creates a workitem per payload  
+Allows setting a Nextrun and Priority for all items as well
+
 ## Pop Workitem node
 ![image](https://user-images.githubusercontent.com/4155937/164938733-6d221629-1792-4b46-baa1-a0cd3e375fb4.png)    
 Takes the next item, ready to be processed of the queue. Openflow will handle prioritized items, and filter out items scheduled to run in the future. Once an item has been popped it gets checked out to the current user, and set to state "Processing" and can no longer to popped. So it is important update the item to Successful or Retry once completed. The simple way to do this is to keep the workflow on it's own tab inside NodeRED. Then add a Catch node, set to catch errors from all nodes, and then add an update Workitem node, to set status to Retry.  
@@ -88,3 +93,7 @@ Updates the selected Workitem, gotten using Pop Workitem.
 You can add or update files associated with the Workitem by using same syntax as with Add Workitem using an array of "file objects" set to the files property.  
 If processing the item, was a success, status should by "Successful", if something went wrong, status should always be set to "Retry" then openflow will determine if, how and when to retry the Workitem based on the Workitem Queue settings.  
 If retrying an item, that has already passed the Max retries on the queue, you can force the item to still be re-processed by setting Ignore max retries to true.
+
+## Delete Workitem node
+![image](https://user-images.githubusercontent.com/4155937/164965528-cf8b2c88-3296-4667-a1ce-c8f13513a38f.png)  
+You should never need to use this, but this node allows you to delete a payload received by the Pop Workitem node
