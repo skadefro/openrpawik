@@ -61,10 +61,16 @@ Throw a new Exception that ends the workflow. By using this exception type we ca
 All WorkItem nodes needs a config node, defining what queue they are working with  
 Right now you manually have to add the id or queue name, at some point we might add a dropdown list instead  
 ![image](https://user-images.githubusercontent.com/4155937/164935663-90d71827-6def-401c-aa4f-9472e5c8b058.png)  
+
+## Schedulering processing Workitems
 You can setup a cron job, are scheduler to pop items, or you can add an amqp consumer, and set this consumer on an Workitem queue
 This will all for a simple workflow like this, that calls a subflow for processing.  
 ![image](https://user-images.githubusercontent.com/4155937/164965765-f0fbd63f-c284-4d69-bbf5-8905e54747a4.png)
 we can the distribute this workflow across multiple NodeRED for easy scaling out our workflow 
+
+## Multiple NodeRED stages
+![image](https://user-images.githubusercontent.com/4155937/164966245-e3564b5e-6df9-4fd4-9593-e2195613bb84.png)  
+Often you will split up processing into multiple steps. This way we can easily scale out certain parts, it can also make handling retries more simple and resource/time consuming having each logical step separated. We can achieve this simply by creating a Workitem Queue per step and "push" the Workitem forward after each step. Like in the picture above. We can the move the second step to a seperate NodeRED and/or create multiple NodeRED's with this workflow to scale out the Workitem handling
 
 ## Add Workitem node
 ![image](https://user-images.githubusercontent.com/4155937/164935130-81ccb186-8cf0-484f-baa2-092ebb574b7c.png)  
