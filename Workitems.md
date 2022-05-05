@@ -18,6 +18,9 @@ and add calls to a clean up workflow, that makes sure any error dialogs are clos
 If you have a role with RPA enabled with multiple robots, you can assign this role to the project, and the Workitem Queue.  
 On the Workitem queue you then set the role as robot target, and the main workflow as entry point workflow, and you can now scale out the workload handling to as may robot as you want ( preferably using [HD Robots](https://www.youtube.com/watch?v=VMQtr0fK3Rw) )
 
+[![WorkItems in OpenRPA part 1](https://img.youtube.com/vi/_y9HU_XPD9c/2.jpg)](https://youtu.be/_y9HU_XPD9c)WorkItems in openrpa part 1  
+[![WorkItems in OpenRPA part 2](https://img.youtube.com/vi/B9BnbrhG1yg/2.jpg)](https://youtu.be/B9BnbrhG1yg)WorkItems in OpenRPA part 2  
+
 ## Multiple stages
 Not all Workitems can or should be processed in one go. Often a unit of work will go though several steps. We can easily achieve this by adding one Workitem Queues for each step, and after a Workitem has compleed successful, we add a new Workitem in the next queue copying the values and files from the original item.  
 For instance, say you create a Workitem for each invoice you receive. You process each invoice, like adding it to your local ERP system, you could then create a Workitem with a "nextrun" set to the payment due date of the invoice, to allow a workflow handle all payments at the correct time.  
