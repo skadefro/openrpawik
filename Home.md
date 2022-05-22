@@ -1,5 +1,7 @@
 Here is a short description of different parts of the robot
 
+Working with [Workitems](https://github.com/open-rpa/openrpa/wiki/Workitems)
+
 [Recording](https://openrpa.openrpa.dk/pages/recording) with the robot
 
 Basic [debugging](https://openrpa.openrpa.dk/pages/debugging) in robot workflows
